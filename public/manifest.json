@@ -1,0 +1,17 @@
+{
+  "short_name": "ABN Billing",
+  "name": "A.B.N. Herbals Billing Application",
+  "icons": [
+    {
+      "src": "/leaf.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#15803d",
+  "display": "standalone",
+  "orientation": "portrait"
+}
+
