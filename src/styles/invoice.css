@@ -233,10 +233,12 @@
   border-collapse: collapse;
   table-layout: fixed;
   flex: 1;
+  border-top: 1px solid #000000;
 }
 
 .inv-table th {
-  border-bottom: 1px solid #000000;
+  border-top: 1px solid #000000 !important;
+  border-bottom: 1px solid #000000 !important;
   border-right: 1px solid #000000;
   padding: 6px 4px;
   font-size: 12px;
@@ -788,12 +790,16 @@ td.col-sno {
     flex: 1 1 auto !important;
     border-collapse: collapse !important;
     table-layout: fixed !important;
+    border-top: 1px solid #000000 !important;
   }
 
   .inv-table th {
     padding: 4px 2px !important;
     font-size: 11px !important;
+    border-top: 1px solid #000000 !important;
+    border-bottom: 1px solid #000000 !important;
     border-right: 1px solid #000000 !important;
+    background-color: transparent !important;
   }
 
   .inv-table td {
