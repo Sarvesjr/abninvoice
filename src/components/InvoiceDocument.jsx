@@ -32,10 +32,10 @@ export default function InvoiceDocument({
   // Compute amount in words dynamically from grandTotal
   const wordsRepresentation = numberToWordsIndian(totals?.grandTotal || 0);
 
-  // Traditional pre-printed bill filler rows so vertical lines extend to fill the A4 page
+  // Traditional pre-printed bill filler rows so vertical lines extend to fill the entire A4 page
   const totalItemRows = items.length;
-  // Calibrated filler height: maintains authentic blank vertical lines without overflowing A4 print boundaries
-  const fillerHeight = Math.max(30, 260 - totalItemRows * 26);
+  // Calibrated filler height: generous height so the table fills the full A4 sheet proportionally
+  const fillerHeight = Math.max(80, 420 - totalItemRows * 28);
 
   // Handle keyboard navigation: pressing Enter creates a new row on the last line, or moves to next row
   const handleKeyDown = (e, rowIndex, fieldName) => {
@@ -524,20 +524,20 @@ export default function InvoiceDocument({
 
             {/* Traditional vertical line extender filler row */}
             {fillerHeight > 0 && (
-              <tr className="inv-filler-row">
+              <tr className="inv-filler-row" style={{ height: `${fillerHeight}px` }}>
                 <td className="col-sno" style={{ height: `${fillerHeight}px` }}></td>
-                <td className="col-product"></td>
-                <td className="col-packing"></td>
-                <td className="col-mfr"></td>
-                <td className="col-batch"></td>
-                <td className="col-exp"></td>
-                <td className="col-qty"></td>
-                <td className="col-free"></td>
-                <td className="col-mrp"></td>
-                <td className="col-hsn"></td>
-                <td className="col-rate"></td>
-                <td className="col-gst"></td>
-                <td className="col-amount"></td>
+                <td className="col-product" style={{ height: `${fillerHeight}px` }}></td>
+                <td className="col-packing" style={{ height: `${fillerHeight}px` }}></td>
+                <td className="col-mfr" style={{ height: `${fillerHeight}px` }}></td>
+                <td className="col-batch" style={{ height: `${fillerHeight}px` }}></td>
+                <td className="col-exp" style={{ height: `${fillerHeight}px` }}></td>
+                <td className="col-qty" style={{ height: `${fillerHeight}px` }}></td>
+                <td className="col-free" style={{ height: `${fillerHeight}px` }}></td>
+                <td className="col-mrp" style={{ height: `${fillerHeight}px` }}></td>
+                <td className="col-hsn" style={{ height: `${fillerHeight}px` }}></td>
+                <td className="col-rate" style={{ height: `${fillerHeight}px` }}></td>
+                <td className="col-gst" style={{ height: `${fillerHeight}px` }}></td>
+                <td className="col-amount" style={{ height: `${fillerHeight}px` }}></td>
               </tr>
             )}
           </tbody>

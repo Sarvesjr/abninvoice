@@ -248,18 +248,18 @@
 
 /* Specific column widths to match reference PDF exactly (sum = 100.0%) */
 .col-sno { width: 3%; }
-.col-product { width: 22%; }
-.col-packing { width: 8%; }
-.col-mfr { width: 7%; }
+.col-product { width: 23%; }
+.col-packing { width: 7%; }
+.col-mfr { width: 6%; }
 .col-batch { width: 5.5%; }
 .col-exp { width: 5.5%; }
-.col-qty { width: 5.5%; }
-.col-free { width: 5%; }
-.col-mrp { width: 7%; }
-.col-hsn { width: 6%; }
-.col-rate { width: 7.5%; }
+.col-qty { width: 5%; }
+.col-free { width: 4.5%; }
+.col-mrp { width: 6.5%; }
+.col-hsn { width: 5.5%; }
+.col-rate { width: 7%; }
 .col-gst { width: 5%; }
-.col-amount { width: 13%; }
+.col-amount { width: 16.5%; }
 
 .inv-table th:last-child,
 .inv-table td:last-child {
@@ -276,12 +276,12 @@
 
 .inv-table th.col-amount {
   text-align: right;
-  padding-right: 8px;
+  padding-right: 10px;
 }
 
 .inv-table td.col-amount {
   text-align: right;
-  padding-right: 8px;
+  padding-right: 10px;
   font-weight: 600;
 }
 
@@ -292,6 +292,11 @@
 /* Empty filler row maintaining the vertical line borders down the page */
 .inv-filler-row td {
   border-bottom: none;
+  border-right: 1px solid #000000;
+}
+
+.inv-filler-row td:last-child {
+  border-right: none !important;
 }
 
 /* Edit mode row wrapper and delete button */
@@ -371,7 +376,7 @@ td.col-sno {
 
 .inv-summary-left {
   width: 63%;
-  border-right: none;
+  border-right: 1px solid #000000;
   padding: 8px 14px;
   display: flex;
   flex-direction: column;
@@ -427,7 +432,7 @@ td.col-sno {
 
 .inv-words-col {
   width: 63%;
-  border-right: none;
+  border-right: 1px solid #000000;
   padding: 8px 14px;
   font-size: 13.5px;
   font-weight: 700;
@@ -698,7 +703,7 @@ td.col-sno {
 @media print {
   @page {
     size: A4 portrait;
-    margin: 6mm 6mm;
+    margin: 8mm 8mm;
   }
 
   *, *::before, *::after {
@@ -707,7 +712,7 @@ td.col-sno {
 
   html, body {
     width: 100% !important;
-    height: auto !important;
+    height: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
     background: #ffffff !important;
@@ -746,14 +751,16 @@ td.col-sno {
   .invoice-box {
     max-width: 100% !important;
     width: 100% !important;
-    height: auto !important;
-    min-height: auto !important;
+    height: 278mm !important;
+    min-height: 278mm !important;
     border: 1.5px solid #000000 !important;
     box-shadow: none !important;
     margin: 0 auto !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
-    display: block !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
     box-sizing: border-box !important;
   }
 
@@ -770,33 +777,57 @@ td.col-sno {
   .inv-table-section {
     width: 100% !important;
     border-top: 1px solid #000000 !important;
-    display: block !important;
+    flex: 1 1 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
 
   .inv-table {
     width: 100% !important;
+    height: 100% !important;
+    flex: 1 1 auto !important;
     border-collapse: collapse !important;
     table-layout: fixed !important;
-    height: auto !important;
   }
 
   .inv-table th {
     padding: 4px 2px !important;
     font-size: 11px !important;
+    border-right: 1px solid #000000 !important;
   }
 
   .inv-table td {
     padding: 4px 3px !important;
     font-size: 11.5px !important;
     height: 26px !important;
+    border-right: 1px solid #000000 !important;
+  }
+
+  .inv-table th:last-child,
+  .inv-table td:last-child {
+    border-right: none !important;
   }
 
   .inv-filler-row {
-    height: auto !important;
+    height: 100% !important;
   }
 
   .inv-filler-row td {
+    height: 100% !important;
     border-bottom: none !important;
+    border-right: 1px solid #000000 !important;
+  }
+
+  .inv-filler-row td:last-child {
+    border-right: none !important;
+  }
+
+  .inv-summary-left {
+    border-right: 1px solid #000000 !important;
+  }
+
+  .inv-words-col {
+    border-right: 1px solid #000000 !important;
   }
 
   /* Make sure inputs render pure plain text in print */
