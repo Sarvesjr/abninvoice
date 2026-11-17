@@ -34,8 +34,8 @@ export default function InvoiceDocument({
 
   // Traditional pre-printed bill filler rows so vertical lines extend to fill the A4 page
   const totalItemRows = items.length;
-  // Generous filler height to fill the A4 sheet proportionally without bottom gap
-  const fillerHeight = Math.max(40, 390 - totalItemRows * 26);
+  // Calibrated filler height: maintains authentic blank vertical lines without overflowing A4 print boundaries
+  const fillerHeight = Math.max(30, 260 - totalItemRows * 26);
 
   // Handle keyboard navigation: pressing Enter creates a new row on the last line, or moves to next row
   const handleKeyDown = (e, rowIndex, fieldName) => {
